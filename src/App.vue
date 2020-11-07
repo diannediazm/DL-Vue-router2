@@ -13,7 +13,9 @@
             </div>
         </div>
     </nav>
-    <router-view></router-view>
+     <transition name="fade">  
+      <router-view></router-view>
+    </transition>  
   </div>
   
 </template>
@@ -36,5 +38,16 @@ export default {
 }
 #menu-v8 a{
   text-shadow: 1px 1px #000;
+}
+.fade-enter-active{
+    animation: fadeIn ease 4s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
 </style>
